@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/png" sizes="48x48" href="logo.png">
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
+
+<title> 
+Control Module Web Interface</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function submitMessage() {
+      alert("Value saved.");
+      setTimeout(function(){ document.location.reload(false); }, 500);   
+    }
+  </script></head><body>
+</head> 
+
+<body> 
+<div сlass="container">
+<div class=logoblock>
+<img src = "logo.png" /> 
+</div>
+<div class=gblock>
+	Signal Control Module
+</div>
+<div class = inputs>
+<p>Module ID</p>
+	<form action="/get" target="hidden-form">
+    <input type="text" name="moduleId" value = %moduleId%>
+    <input type="submit" value="Save" onclick="submitMessage()">
+	</form>
+<p>MQTT Broker IP:</p>
+	<form action="/get" target="hidden-form">
+    <input type="text" name="brokerIp" value = %brokerIp% pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}">
+    <input type="submit" value="Save" onclick="submitMessage()">
+	</form>
+
+<p>MQTT port:</p>
+	<form action="/get" target="hidden-form">
+    <input type="number" name="brokerPort" value = %brokerPort% pattern="\d{1,4}">
+    <input type="submit" value="Save" onclick="submitMessage()">
+  </form>
+<p>SSID:</p>
+  <form action="/get" target="hidden-form">
+    <input type="text" name="brokerSsid" value = %brokerSsid%>
+    <input type="submit" value="Save" onclick="submitMessage()">
+	</form>
+<p>Password:</p>
+  <form action="/get" target="hidden-form">
+    <input type="text" name="brokerPassword" value = %brokerPassword%>
+    <input type="submit" value="Save" onclick="submitMessage()">
+	</form>
+	<form action="/get" target="hidden-form">
+    <br>
+	<input style="display:none" name="reset">
+    <input class="reset" type="submit" value="Reset module">
+	</form>
+	<iframe style="display:none" name="hidden-form"></iframe>
+	</div>
+</div>
+</body> </html>
